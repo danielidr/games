@@ -19,4 +19,24 @@
   <div class="actions">
     <%= form.submit %>
   </div>
+
+  <div class="field">
+    <%= form.label "Rules" %>
+    <%= form.text_area :text_rules %>
+  </div>
+
+  <div class="field">
+    <%= form.label "Rules (PDF)" %>
+    <%= form.file_field :pdf_rules %>
+  </div>
+
+  <div class="field">
+    <%= form.label :box_picture %>
+    <%= form.file_field :box_picture %>
+  </div>
+
+  <div class="field">
+    <%= form.label :components_pictures %>
+    <%= form.file_field :pieces, multiple: true %>
+  </div>
 <% end %>
