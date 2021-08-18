@@ -3,7 +3,7 @@ class GamesController < ApplicationController
 
   # GET /games or /games.json
   def index
-    @games = Game.all
+    @games = Game.with_attached_box_picture.all
   end
 
   # GET /games/1 or /games/1.json
@@ -13,6 +13,8 @@ class GamesController < ApplicationController
   # GET /games/new
   def new
     @game = Game.new
+    @rules = Rule.eager_load(:games)
+    @components = Component.eager_load(:games)
   end
 
   # GET /games/1/edit
